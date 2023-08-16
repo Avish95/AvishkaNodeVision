@@ -16,7 +16,7 @@ router.post('/classify', function (req, res, next) {
   }
 
   AWS.config.update({
-    region: 'us-east-1',
+    region: 'ap-southeast-1',
     accessKeyId: 'AKIARAR74F5B2ZJFROOU',
     secretAccessKey: '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'
   });
@@ -38,7 +38,7 @@ router.post('/classify', function (req, res, next) {
 
       const labels = data.Labels.map((label) => label.Name);
 
-      res.json({
+      res.status(200).json({
         "labels": labels
       });
     }
