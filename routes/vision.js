@@ -32,7 +32,7 @@ router.post('/classify', function (req, res, next) {
 
   client.detectLabels(params, function (err, data) {
     if (err) {
-
+      console.error('Error:', err);
       res.status(500).json({ error: 'An unexpected error occurred' });
     } else {
 
